@@ -24,6 +24,28 @@ examples to help you understand this concept:
 ## Second Step
 We’d like you to extend the functionality of your algorithm to return only the most
 frequent n-gram, not all of them.
+```python
+	def mostFrequentNGram(string,number):
+	    """
+	    Function that is in charge of calculating most frequent n-gram of the word with the number of separations received
+	    Receives:
+		string: piece of text
+		number: number of separations
+	    """
+	    nGrams = (calculatNGrams(string,number))
+	    dic = {}
+	    result = []
+	    for i in range(len(nGrams)):
+		dic[nGrams[i]] = nGrams.count(nGrams[i])
+
+	    for key in dic:
+		if(dic[key] == number):
+		    result.append(key)
+		elif(dic[key] == number - 1):
+		    result.append(key)
+
+	    return result[0]
+```
 
 ## Expectations
 We’re expecting an algorithm that handles these two steps in a nice, cleanly
@@ -49,4 +71,4 @@ You need to have installed the next software to successfully run the program:
 
 ## License
 
- This project is licensed under the MIT License
+ This project is licensed under the MIT License [LICENSE](https://github.com/Nikolai9906/SlangChallenge/blob/master/LICENSE.txt)
